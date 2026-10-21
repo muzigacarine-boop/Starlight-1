@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly Check-in | Starlight Africa</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-symbol">✦</span>
+      <span>starlight <strong>Africa</strong></span>
+    </a>
+    <a class="opportunity-link" href="index.html">← Dashboard</a>
+  </header>
+
+  <main class="dashboard-main">
+    <section class="welcome-section">
+      <p class="eyebrow">YOUR ALUMNI JOURNEY</p>
+      <h1>Monthly check-in </h1>
+      <p class="welcome-description">
+        A few quick questions help Starlight Africa understand your journey
+        and connect you with relevant support and opportunities.
+      </p>
+    </section>
+
+    <section class="checkin-form-card">
+      <div class="form-intro">
+        <span class="opportunity-category">MONTHLY UPDATE</span>
+        <h2>How are things going?</h2>
+        <p>This demo saves your answers in this browser only.</p>
+      </div>
+
+      <form id="checkinForm">
+        <div class="form-group">
+          <label for="educationStatus">What best describes your current situation?</label>
+          <select id="educationStatus" name="educationStatus" required>
+            <option value="">Choose your current status</option>
+            <option value="Secondary school">Still completing secondary school</option>
+            <option value="University student">University student</option>
+            <option value="Technical training">Technical or vocational training</option>
+            <option value="Employed">Employed</option>
+            <option value="Seeking opportunities">Looking for work or further study</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="stemStatus">Are you currently studying or working in STEM?</label>
+          <select id="stemStatus" name="stemStatus" required>
+            <option value="">Choose an answer</option>
+            <option value="Studying STEM">Yes, studying STEM</option>
+            <option value="Working in STEM">Yes, working in STEM</option>
+            <option value="Exploring STEM">Exploring STEM opportunities</option>
+            <option value="Not currently in STEM">Not currently in STEM</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="progressNotes">What progress or challenge would you like to share?</label>
+          <textarea
+            id="progressNotes"
+            name="progressNotes"
+            rows="4"
+            maxlength="500"
+            placeholder="For example, a course you started, a new skill, or support you need..."
+          ></textarea>
+          <p class="field-hint">Optional. Please avoid sharing highly sensitive personal information.</p>
+        </div>
+
+        <div class="form-group">
+          <label for="supportNeeds">What support would be most helpful right now?</label>
+          <select id="supportNeeds" name="supportNeeds">
+            <option value="">No specific support / prefer not to say</option>
+            <option value="Mentorship">Mentorship</option>
+            <option value="Scholarships">Scholarship information</option>
+            <option value="Internships">Internships and jobs</option>
+            <option value="Learning resources">Learning resources</option>
+            <option value="Career guidance">Career guidance</option>
+            <option value="Other support">Other support</option>
+          </select>
+        </div>
+
+        <label class="consent-option">
+          <input type="checkbox" id="consent" required>
+          <span>
+            I understand this is a prototype and agree to submit this update
+            for the purposes of this demonstration.
+          </span>
+        </label>
+
+        <button class="primary-button" type="submit">
+          Submit monthly check-in →
+        </button>
+
+        <p id="formMessage" class="form-message" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="scripts/data.js"></script>
+  <script src="scripts/checkin.js"></script>
+</body>
+</html>

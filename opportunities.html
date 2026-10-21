@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opportunities | Starlight Africa</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-symbol">✦</span>
+      <span>starlight <strong>Africa</strong></span>
+    </a>
+    <a class="opportunity-link" href="index.html">← Dashboard</a>
+  </header>
+
+  <main class="dashboard-main">
+    <section class="welcome-section">
+      <p class="eyebrow">GROW YOUR FUTURE</p>
+      <h1>Opportunities for you ✨</h1>
+      <p class="welcome-description">
+        Explore resources to support your education, career, and journey in STEM.
+      </p>
+    </section>
+
+    <section class="opportunities-toolbar">
+      <label for="categoryFilter">Explore by category</label>
+      <select id="categoryFilter">
+        <option value="All">All opportunities</option>
+        <option value="Mentorship">Mentorship</option>
+        <option value="Internships">Internships & jobs</option>
+        <option value="Scholarships">Scholarships</option>
+        <option value="Career Development">Career development</option>
+      </select>
+    </section>
+
+    <section id="opportunitiesGrid" class="opportunities-grid">
+      <p>Loading opportunities...</p>
+    </section>
+
+    <p class="demo-notice">
+      Prototype notice: these are illustrative opportunities for demonstration.
+      They are not confirmed vacancies or scholarship offers.
+    </p>
+  </main>
+
+  <script src="scripts/data.js"></script>
+  <script src="scripts/opportunities.js"></script>
+</body>
+</html>

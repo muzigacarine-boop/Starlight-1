@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alumni Overview | Starlight Africa</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-symbol">✦</span>
+      <span>starlight <strong>Africa</strong></span>
+    </a>
+    <a class="opportunity-link" href="index.html">← Graduate View</a>
+  </header>
+
+  <main class="dashboard-main">
+    <section class="welcome-section">
+      <p class="eyebrow">STAFF DASHBOARD · DEMO</p>
+      <h1>Alumni overview</h1>
+      <p class="welcome-description">
+        Monitor alumni engagement, education, employment, and STEM participation.
+      </p>
+    </section>
+
+    <section class="admin-stats">
+      <article class="admin-stat-card">
+        <span class="admin-stat-label">Sample alumni</span>
+        <strong id="totalAlumni">120</strong>
+        <p>Illustrative cohort size</p>
+      </article>
+
+      <article class="admin-stat-card">
+        <span class="admin-stat-label">Monthly check-ins</span>
+        <strong id="checkinRate">68%</strong>
+        <p>Sample reporting rate</p>
+      </article>
+
+      <article class="admin-stat-card">
+        <span class="admin-stat-label">In STEM</span>
+        <strong id="stemRate">54%</strong>
+        <p>Sample participation rate</p>
+      </article>
+
+      <article class="admin-stat-card">
+        <span class="admin-stat-label">Status unknown</span>
+        <strong id="unknownRate">18%</strong>
+        <p>Graduates needing follow-up</p>
+      </article>
+    </section>
+
+    <section class="admin-panel">
+      <div class="admin-panel-heading">
+        <div>
+          <p class="eyebrow">COHORT MONITORING</p>
+          <h2>Graduate outcomes</h2>
+        </div>
+        <span class="demo-pill">Illustrative data</span>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="alumni-table">
+          <thead>
+            <tr>
+              <th>Graduate</th>
+              <th>Education / work</th>
+              <th>STEM status</th>
+              <th>Check-ins</th>
+            </tr>
+          </thead>
+          <tbody id="alumniTableBody">
+            <tr>
+              <td>Aline</td>
+              <td>University student</td>
+              <td>Studying Computer Science</td>
+              <td>4 / 12</td>
+            </tr>
+            <tr>
+              <td>Graduate 002</td>
+              <td>Technical training</td>
+              <td>Exploring STEM</td>
+              <td>8 / 12</td>
+            </tr>
+            <tr>
+              <td>Graduate 003</td>
+              <td>Status unknown</td>
+              <td>Status unknown</td>
+              <td>1 / 12</td>
+            </tr>
+            <tr>
+              <td>Graduate 004</td>
+              <td>Employed</td>
+              <td>Working in STEM</td>
+              <td>10 / 12</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="admin-note">
+        This prototype uses fictional sample records. It is not connected to
+        a real alumni database.
+      </p>
+    </section>
+  </main>
+  <script src="scripts/data.js"></script>
+<script src="scripts/admin.js"></script>
+</body>
+</html>
