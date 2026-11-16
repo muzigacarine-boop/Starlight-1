@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create account | Starlight Connect</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/signup.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="login.html" aria-label="Starlight Connect">
+      <span class="brand-mark">S</span>
+      <span class="brand-name">starlight<span>check-in</span></span>
+    </a>
+    <a class="auth-top-link" href="login.html">Log in</a>
+  </header>
+
+  <main class="auth-shell">
+    <section class="auth-card" aria-labelledby="signupTitle">
+      <p class="eyebrow">YOUR JOURNEY, YOUR FUTURE</p>
+      <h1 id="signupTitle">Create your account</h1>
+      <p class="auth-description">
+        Join Starlight check-in to stay connected and share your progress each month.
+      </p>
+
+      <form id="signup-form" class="auth-form">
+
+        <h2 class="auth-section-title">About you</h2>
+        <div class="auth-row">
+          <div class="auth-field">
+            <label for="first_name">First name</label>
+            <input type="text" id="first_name" autocomplete="given-name" required>
+          </div>
+          <div class="auth-field">
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" autocomplete="family-name" required>
+          </div>
+        </div>
+
+        <div class="auth-field">
+          <label for="other_name">Other name <span class="optional">(optional)</span></label>
+          <input type="text" id="other_name">
+        </div>
+
+        <div class="auth-row">
+          <div class="auth-field">
+            <label for="id_type">ID type</label>
+            <select id="id_type" required>
+              <option value="">Select…</option>
+              <option value="national_id">National ID</option>
+              <option value="refugee_id">Refugee ID</option>
+            </select>
+          </div>
+          <div class="auth-field">
+            <label for="id_number">ID number</label>
+            <input type="text" id="id_number" maxlength="30" autocomplete="off" required>
+          </div>
+        </div>
+
+        <div class="auth-row">
+          <div class="auth-field">
+            <label for="date_of_birth">Date of birth</label>
+            <input type="date" id="date_of_birth" min="1950-01-01" required>
+          </div>
+          <div class="auth-field">
+            <label for="grad_year">Year of graduation</label>
+            <input type="number" id="grad_year" min="2000" max="2035" required>
+          </div>
+        </div>
+
+        <h2 class="auth-section-title">Family details</h2>
+        <div class="auth-row">
+          <div class="auth-field">
+            <label for="father_name">Father's names</label>
+            <input type="text" id="father_name" required>
+          </div>
+          <div class="auth-field">
+            <label for="mother_name">Mother's names</label>
+            <input type="text" id="mother_name" required>
+          </div>
+        </div>
+        <div class="auth-row">
+          <div class="auth-field">
+            <label for="maternal_grandmother_name">Maternal grandmother</label>
+            <input type="text" id="maternal_grandmother_name">
+          </div>
+          <div class="auth-field">
+            <label for="maternal_grandfather_name">Maternal grandfather</label>
+            <input type="text" id="maternal_grandfather_name">
+          </div>
+        </div>
+        <div class="auth-row">
+          <div class="auth-field">
+            <label for="paternal_grandmother_name">Paternal grandmother</label>
+            <input type="text" id="paternal_grandmother_name">
+          </div>
+          <div class="auth-field">
+            <label for="paternal_grandfather_name">Paternal grandfather</label>
+            <input type="text" id="paternal_grandfather_name">
+          </div>
+        </div>
+
+        <h2 class="auth-section-title">How to reach you</h2>
+        <div class="auth-row">
+          <div class="auth-field">
+            <label for="personal_contact">Personal contact</label>
+            <input type="tel" id="personal_contact" autocomplete="tel" required>
+          </div>
+          <div class="auth-field">
+            <label for="alternative_contact">Alternative contact</label>
+            <input type="tel" id="alternative_contact">
+          </div>
+        </div>
+
+        <h2 class="auth-section-title">Your login</h2>
+        <div class="auth-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" autocomplete="email" required>
+        </div>
+        <div class="auth-field">
+          <label for="password">Password</label>
+          <input type="password" id="password" minlength="8" autocomplete="new-password" required>
+          <p class="field-hint">At least 8 characters.</p>
+        </div>
+
+        <label class="consent-option">
+          <input type="checkbox" id="consent" required>
+          <span>
+            I agree that Starlight may store and use my personal information, including my ID
+            number and family details, to stay in touch and track my progress.
+          </span>
+        </label>
+
+        <button class="primary-button" type="submit">Create account</button>
+      </form>
+
+      <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-client.js"></script>
+  <script src="scripts/auth.js"></script>
+  <script>
+    document.getElementById('date_of_birth').max = new Date().toISOString().split('T')[0];
+
+    const val = (id) => document.getElementById(id).value.trim();
+
+    document.getElementById('signup-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      signUp({
+        email: val('email'),
+        password: document.getElementById('password').value,
+        first_name: val('first_name'),
+        surname: val('surname'),
+        other_name: val('other_name'),
+        id_type: val('id_type'),
+        id_number: val('id_number'),
+        date_of_birth: val('date_of_birth'),
+        graduation_year: val('grad_year'),
+        father_name: val('father_name'),
+        mother_name: val('mother_name'),
+        maternal_grandmother_name: val('maternal_grandmother_name'),
+        maternal_grandfather_name: val('maternal_grandfather_name'),
+        paternal_grandmother_name: val('paternal_grandmother_name'),
+        paternal_grandfather_name: val('paternal_grandfather_name'),
+        personal_contact: val('personal_contact'),
+        alternative_contact: val('alternative_contact'),
+        consent: document.getElementById('consent').checked
+      });
+    });
+  </script>
+</body>
+</html>

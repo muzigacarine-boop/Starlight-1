@@ -1091,4 +1091,12 @@
       padding: 18px;
     }
   }
-  
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid #ded5e2;
+  border-radius: 12px;
+  background: #fff;
+  color: #32143f;
+  font: inherit;
+}
